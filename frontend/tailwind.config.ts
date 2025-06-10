@@ -1,18 +1,15 @@
 import type { Config } from "tailwindcss";
 
-export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+const config: Config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"], // ✅ Correct Tailwind paths
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        display: ["var(--font-inter)", "sans-serif"], // ✅ Custom font
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
